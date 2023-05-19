@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rockaper-Scissors Game</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Rock-Paper-Scissors Game</h1>
+<form method="POST" action="{{ url_for('play') }}">
+<label for="choice">Choose your move:</label>
+<select id="choice" name="choice">
+<option value="rock">Rock</option>
+<option value="paper">Paper</option>
+<option value="scissors">Scissors</option>
+</select>
+<br>
+<input type="submit" value="Play">
+</form>
+{% if result %}
+<div class="result">
+<p>{{ result }}</p>
+</div>
+{% endif %}
+</div>
+</body>
+</html>
